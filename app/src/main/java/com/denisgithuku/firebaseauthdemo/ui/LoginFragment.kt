@@ -49,8 +49,7 @@ class LoginFragment : Fragment() {
 
                                 val intent = Intent(requireActivity(), HomeActivity::class.java)
                                     .apply {
-                                        this.flags =
-                                            Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                                        this.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                                         this.putExtra("user_id", firebaseUser)
                                         this.putExtra("email_id", emailInput)
                                     }
@@ -64,7 +63,7 @@ class LoginFragment : Fragment() {
                             }
                             Snackbar.make(
                                 requireActivity().findViewById(android.R.id.content),
-                                task.exception!!.message.toString(),
+                                task.exception?.message.toString(),
                                 Snackbar.LENGTH_SHORT
                             ).show()
 
